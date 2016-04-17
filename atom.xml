@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Gao yuan的博客</title>
+  <subtitle>Gao yuan的博客</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2016-04-17T11:05:48.000Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Gao yuan</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>开始写博客了。。。</title>
+    <link href="http://yoursite.com/2016/04/17/%E5%BC%80%E5%A7%8B%E5%86%99%E5%8D%9A%E5%AE%A2%E4%BA%86%E3%80%82%E3%80%82%E3%80%82/"/>
+    <id>http://yoursite.com/2016/04/17/开始写博客了。。。/</id>
+    <published>2016-04-17T10:46:34.000Z</published>
+    <updated>2016-04-17T11:05:48.000Z</updated>
+    
+    <content type="html">&lt;p&gt;虽然没人规定程序员必须有自己的博客，但是找个地方记录自己项目中遇到的坑总归好的。要是能研究点有深度的技术那是再好不过了！&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;虽然没人规定程序员必须有自己的博客，但是找个地方记录自己项目中遇到的坑总归好的。要是能研究点有深度的技术那是再好不过了！&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+      <category term="生活" scheme="http://yoursite.com/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+</feed>
