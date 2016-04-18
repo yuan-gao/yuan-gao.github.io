@@ -22,13 +22,13 @@
     <published>2016-04-18T08:19:07.000Z</published>
     <updated>2016-04-18T14:21:57.000Z</updated>
     
-    <content type="html">&lt;h3 id=&quot;&amp;#x5BFC;&amp;#x8BED;&amp;#xFF1A;&quot;&gt;&lt;a href=&quot;#&amp;#x5BFC;&amp;#x8BED;&amp;#xFF1A;&quot; class=&quot;headerlink&quot; title=&quot;&amp;#x5BFC;&amp;#x8BED;&amp;#xFF1A;&quot;&gt;&lt;/a&gt;&amp;#x5BFC;&amp;#x8BED;&amp;#xFF1A;&lt;/h3&gt;&lt;p&gt;&amp;#x6700;&amp;#x8FD1;&amp;#x7684;&amp;#x4E00;&amp;#x4E2A;&amp;#x9879;&amp;#x76EE;&amp;#x6709;&amp;#x51E0;&amp;#x4E2A;&amp;#x52A8;&amp;#x753B;&amp;#x6548;&amp;#x679C;&amp;#x4EE3;&amp;#x7801;&amp;#x5199;&amp;#x7684;&amp;#x4E0D;&amp;#x591F;&amp;#x5408;&amp;#x7406;&amp;#xFF0C;&amp;#x5BFC;&amp;#x81F4;&amp;#x9875;&amp;#x9762;&amp;#x6ED1;&amp;#x52A8;&amp;#x6BD4;&amp;#x8F83;&amp;#x5361;&amp;#x987F;&amp;#xFF0C;&amp;#x4F46;&amp;#x662F;&amp;#x53C8;&amp;#x4E0D;&amp;#x77E5;&amp;#x9053;&amp;#x5177;&amp;#x4F53;&amp;#x8BE5;&amp;#x4F18;&amp;#x5316;&amp;#x54EA;&amp;#x91CC;&amp;#x7684;&amp;#x4EE3;&amp;#x7801;&amp;#x3002;&amp;#x4E8E;&amp;#x662F;&amp;#x60F3;&amp;#x5230;&amp;#x7528;Instruments&amp;#x6765;&amp;#x68C0;&amp;#x6D4B;&amp;#xFF0C;&amp;#x4E0D;&amp;#x5F97;&amp;#x4E0D;&amp;#x8BF4;&amp;#x592A;&amp;#x7279;&amp;#x4E48;&amp;#x667A;&amp;#x80FD;&amp;#x4E86;&amp;#xFF0C;&amp;#x7A0B;&amp;#x5E8F;&amp;#x5458;&amp;#x6700;&amp;#x6015;&amp;#x7684;&amp;#x5C31;&amp;#x662F;&amp;#x4E0D;&amp;#x77E5;&amp;#x9053;&amp;#x81EA;&amp;#x5DF1;&amp;#x9519;&amp;#x5728;&amp;#x54EA;&amp;#x513F;&amp;#xFF01;&amp;#x4E0B;&amp;#x9762;&amp;#x7B80;&amp;#x5355;&amp;#x4ECB;&amp;#x7ECD;&amp;#x4E0B;&amp;#x5B83;&amp;#x7684;&amp;#x4F7F;&amp;#x7528;&amp;#x6D41;&amp;#x7A0B;&amp;#x3002;&lt;/p&gt;
-&lt;h3 id=&quot;&amp;#x542F;&amp;#x52A8;&amp;#xFF1A;&quot;&gt;&lt;a href=&quot;#&amp;#x542F;&amp;#x52A8;&amp;#xFF1A;&quot; class=&quot;headerlink&quot; title=&quot;&amp;#x542F;&amp;#x52A8;&amp;#xFF1A;&quot;&gt;&lt;/a&gt;&amp;#x542F;&amp;#x52A8;&amp;#xFF1A;&lt;/h3&gt;&lt;p&gt;&amp;#x901A;&amp;#x8FC7;Xcode&amp;#x5DE5;&amp;#x5177;&amp;#x680F;&amp;#x4E2D; &lt;strong&gt;Product-&amp;gt;Profile&lt;/strong&gt; &amp;#x53EF;&amp;#x4EE5;&amp;#x542F;&amp;#x52A8;,&amp;#x6216;&amp;#x8005;&amp;#x4F7F;&amp;#x7528;&amp;#x5FEB;&amp;#x6377;&amp;#x952E; &lt;code&gt;command+i&lt;/code&gt; &amp;#x3002;&amp;#x542F;&amp;#x52A8;&amp;#x6709;&amp;#x70B9;&amp;#x6162;&amp;#xFF0C;&amp;#x8010;&amp;#x5FC3;&amp;#x7B49;&amp;#x7B49;&amp;#x5C31;&amp;#x4F1A;&amp;#x51FA;&amp;#x6765;&amp;#xFF0C;&amp;#x50CF;&amp;#x4E0B;&amp;#x9762;&amp;#x8FD9;&amp;#x4E2A;&amp;#x6837;&amp;#x5B50;&amp;#xFF08;UI&amp;#x6BD4;&amp;#x4E4B;&amp;#x524D;&amp;#x7684;&amp;#x8001;&amp;#x7248;&amp;#x672C;&amp;#x597D;&amp;#x770B;&amp;#x4E86;&amp;#x4E0D;&amp;#x5C11;&amp;#xFF09;:&lt;br&gt;&lt;img src=&quot;/2016/04/18/Instruments&amp;#x7684;&amp;#x4F7F;&amp;#x7528;/me/Instruments&amp;#x7684;&amp;#x4F7F;&amp;#x7528;/1.png&quot; alt=&quot;Instruments&amp;#x9762;&amp;#x677F;&quot;&gt;&lt;/p&gt;
+    <content type="html">&lt;h3 id=&quot;导语：&quot;&gt;&lt;a href=&quot;#导语：&quot; class=&quot;headerlink&quot; title=&quot;导语：&quot;&gt;&lt;/a&gt;导语：&lt;/h3&gt;&lt;p&gt;最近的一个项目有几个动画效果代码写的不够合理，导致页面滑动比较卡顿，但是又不知道具体该优化哪里的代码。于是想到用Instruments来检测，不得不说太特么智能了，程序员最怕的就是不知道自己错在哪儿！下面简单介绍下它的使用流程。&lt;/p&gt;
+&lt;h3 id=&quot;启动：&quot;&gt;&lt;a href=&quot;#启动：&quot; class=&quot;headerlink&quot; title=&quot;启动：&quot;&gt;&lt;/a&gt;启动：&lt;/h3&gt;&lt;p&gt;通过Xcode工具栏中 &lt;strong&gt;Product-&amp;gt;Profile&lt;/strong&gt; 可以启动,或者使用快捷键 &lt;code&gt;command+i&lt;/code&gt; 。启动有点慢，耐心等等就会出来，像下面这个样子（UI比之前的老版本好看了不少）:&lt;br&gt;&lt;img src=&quot;me/Instruments的使用/1.png&quot; alt=&quot;Instruments面板&quot;&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;&amp;#x5BFC;&amp;#x8BED;&amp;#xFF1A;&quot;&gt;&lt;a href=&quot;#&amp;#x5BFC;&amp;#x8BED;&amp;#xFF1A;&quot; class=&quot;headerlink&quot; title=&quot;&amp;#x5BFC;&amp;#x8BED;&amp;#xFF1A;&quot;&gt;&lt;/a&gt;&amp;#x5BFC;&amp;#x8BE
+      &lt;h3 id=&quot;导语：&quot;&gt;&lt;a href=&quot;#导语：&quot; class=&quot;headerlink&quot; title=&quot;导语：&quot;&gt;&lt;/a&gt;导语：&lt;/h3&gt;&lt;p&gt;最近的一个项目有几个动画效果代码写的不够合理，导致页面滑动比较卡顿，但是又不知道具体该优化哪里的代码。于是想到用Instrument
     
     </summary>
     
@@ -44,12 +44,13 @@
     <published>2016-04-17T10:46:34.000Z</published>
     <updated>2016-04-17T11:05:48.000Z</updated>
     
-    <content type="html">&lt;p&gt;&amp;#x867D;&amp;#x7136;&amp;#x6CA1;&amp;#x4EBA;&amp;#x89C4;&amp;#x5B9A;&amp;#x7A0B;&amp;#x5E8F;&amp;#x5458;&amp;#x5FC5;&amp;#x987B;&amp;#x6709;&amp;#x81EA;&amp;#x5DF1;&amp;#x7684;&amp;#x535A;&amp;#x5BA2;&amp;#xFF0C;&amp;#x4F46;&amp;#x662F;&amp;#x627E;&amp;#x4E2A;&amp;#x5730;&amp;#x65B9;&amp;#x8BB0;&amp;#x5F55;&amp;#x81EA;&amp;#x5DF1;&amp;#x9879;&amp;#x76EE;&amp;#x4E2D;&amp;#x9047;&amp;#x5230;&amp;#x7684;&amp;#x5751;&amp;#x603B;&amp;#x5F52;&amp;#x597D;&amp;#x7684;&amp;#x3002;&amp;#x8981;&amp;#x662F;&amp;#x80FD;&amp;#x7814;&amp;#x7A76;&amp;#x70B9;&amp;#x6709;&amp;#x6DF1;&amp;#x5EA6;&amp;#x7684;&amp;#x6280;&amp;#x672F;&amp;#x90A3;&amp;#x662F;&amp;#x518D;&amp;#x597D;&amp;#x4E0D;&amp;#x8FC7;&amp;#x4E86;&amp;#xFF01;&lt;/p&gt;
+    <content type="html">&lt;p&gt;虽然没人规定程序员必须有自己的博客，但是找个地方记录自己项目中遇到的坑总归好的。要是能研究点有深度的技术那是再好不过了！&lt;/p&gt;
 </content>
     
     <summary type="html">
     
-      &lt;p&gt;&amp;#x867D;&amp;#x7136;&amp;#x6CA1;&amp;#x4EBA;&amp;#x89C4;&amp;#x5B9A;&amp;#x7A0B;&amp;#x5E8F;&amp;#x5458;&amp;#x5FC5;&amp;#x987B;&amp;#x6709;&amp;#x81EA;&amp;#x5DF1;&amp;#x7684;&amp;#x535A;&amp;#x5BA2;&amp;
+      &lt;p&gt;虽然没人规定程序员必须有自己的博客，但是找个地方记录自己项目中遇到的坑总归好的。要是能研究点有深度的技术那是再好不过了！&lt;/p&gt;
+
     
     </summary>
     
