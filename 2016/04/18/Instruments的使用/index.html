@@ -82,21 +82,18 @@
 
 
 
-<meta name="description" content="导语：最近的一个项目有几个动画效果代码写的不够合理，导致页面滑动比较卡顿，但是又不知道具体该优化哪里的代码。于是想到用Instruments来检测，不得不说太特么智能了，程序员最怕的就是不知道自己错在哪儿！下面简单介绍下它的使用流程。
-启动：通过Xcode工具栏中 Product-&amp;gt;Profile 可以启动,或者使用快捷键 command+i 。启动有点慢，耐心等等就会出来，像下面这个样子（">
+<meta name="description" content="&amp;#x5BFC;&amp;#x8BED;&amp;#xFF1A;&amp;#x6700;&amp;#x8FD1;&amp;#x7684;&amp;#x4E00;&amp;#x4E2A;&amp;#x9879;&amp;#x76EE;&amp;#x6709;&amp;#x51E0;&amp;#x4E2A;&amp;#x52A8;&amp;#x753B;&amp;#x6548;&amp;#x679C;&amp;#x4EE3;&amp;#x7801;&amp;#x5199;&amp;#x7684;&amp;#x4E0D;&amp;#x591F;&amp;#x5408;&amp;#x7406;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Instruments的使用">
 <meta property="og:url" content="http://yoursite.com/2016/04/18/Instruments的使用/index.html">
 <meta property="og:site_name" content="Gao yuan的博客">
-<meta property="og:description" content="导语：最近的一个项目有几个动画效果代码写的不够合理，导致页面滑动比较卡顿，但是又不知道具体该优化哪里的代码。于是想到用Instruments来检测，不得不说太特么智能了，程序员最怕的就是不知道自己错在哪儿！下面简单介绍下它的使用流程。
-启动：通过Xcode工具栏中 Product-&amp;gt;Profile 可以启动,或者使用快捷键 command+i 。启动有点慢，耐心等等就会出来，像下面这个样子（">
-<meta property="og:image" content="http://yoursite.com/me/Instruments的使用/1.png">
-<meta property="og:updated_time" content="2016-04-18T14:21:57.000Z">
+<meta property="og:description" content="&amp;#x5BFC;&amp;#x8BED;&amp;#xFF1A;&amp;#x6700;&amp;#x8FD1;&amp;#x7684;&amp;#x4E00;&amp;#x4E2A;&amp;#x9879;&amp;#x76EE;&amp;#x6709;&amp;#x51E0;&amp;#x4E2A;&amp;#x52A8;&amp;#x753B;&amp;#x6548;&amp;#x679C;&amp;#x4EE3;&amp;#x7801;&amp;#x5199;&amp;#x7684;&amp;#x4E0D;&amp;#x591F;&amp;#x5408;&amp;#x7406;">
+<meta property="og:image" content="http://7xo0ae.com1.z0.glb.clouddn.com/1.png">
+<meta property="og:updated_time" content="2016-04-19T02:37:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Instruments的使用">
-<meta name="twitter:description" content="导语：最近的一个项目有几个动画效果代码写的不够合理，导致页面滑动比较卡顿，但是又不知道具体该优化哪里的代码。于是想到用Instruments来检测，不得不说太特么智能了，程序员最怕的就是不知道自己错在哪儿！下面简单介绍下它的使用流程。
-启动：通过Xcode工具栏中 Product-&amp;gt;Profile 可以启动,或者使用快捷键 command+i 。启动有点慢，耐心等等就会出来，像下面这个样子（">
-<meta name="twitter:image" content="http://yoursite.com/me/Instruments的使用/1.png">
+<meta name="twitter:description" content="&amp;#x5BFC;&amp;#x8BED;&amp;#xFF1A;&amp;#x6700;&amp;#x8FD1;&amp;#x7684;&amp;#x4E00;&amp;#x4E2A;&amp;#x9879;&amp;#x76EE;&amp;#x6709;&amp;#x51E0;&amp;#x4E2A;&amp;#x52A8;&amp;#x753B;&amp;#x6548;&amp;#x679C;&amp;#x4EE3;&amp;#x7801;&amp;#x5199;&amp;#x7684;&amp;#x4E0D;&amp;#x591F;&amp;#x5408;&amp;#x7406;">
+<meta name="twitter:image" content="http://7xo0ae.com1.z0.glb.clouddn.com/1.png">
 
 
 
@@ -291,8 +288,8 @@
       
 
       
-        <h3 id="导语："><a href="#导语：" class="headerlink" title="导语："></a>导语：</h3><p>最近的一个项目有几个动画效果代码写的不够合理，导致页面滑动比较卡顿，但是又不知道具体该优化哪里的代码。于是想到用Instruments来检测，不得不说太特么智能了，程序员最怕的就是不知道自己错在哪儿！下面简单介绍下它的使用流程。</p>
-<h3 id="启动："><a href="#启动：" class="headerlink" title="启动："></a>启动：</h3><p>通过Xcode工具栏中 <strong>Product-&gt;Profile</strong> 可以启动,或者使用快捷键 <code>command+i</code> 。启动有点慢，耐心等等就会出来，像下面这个样子（UI比之前的老版本好看了不少）:<br><img src="me/Instruments的使用/1.png" alt="Instruments面板"></p>
+        <h3 id="&#x5BFC;&#x8BED;&#xFF1A;"><a href="#&#x5BFC;&#x8BED;&#xFF1A;" class="headerlink" title="&#x5BFC;&#x8BED;&#xFF1A;"></a>&#x5BFC;&#x8BED;&#xFF1A;</h3><p>&#x6700;&#x8FD1;&#x7684;&#x4E00;&#x4E2A;&#x9879;&#x76EE;&#x6709;&#x51E0;&#x4E2A;&#x52A8;&#x753B;&#x6548;&#x679C;&#x4EE3;&#x7801;&#x5199;&#x7684;&#x4E0D;&#x591F;&#x5408;&#x7406;&#xFF0C;&#x5BFC;&#x81F4;&#x9875;&#x9762;&#x6ED1;&#x52A8;&#x6BD4;&#x8F83;&#x5361;&#x987F;&#xFF0C;&#x4F46;&#x662F;&#x53C8;&#x4E0D;&#x77E5;&#x9053;&#x5177;&#x4F53;&#x8BE5;&#x4F18;&#x5316;&#x54EA;&#x91CC;&#x7684;&#x4EE3;&#x7801;&#x3002;&#x4E8E;&#x662F;&#x60F3;&#x5230;&#x7528;Instruments&#x6765;&#x68C0;&#x6D4B;&#xFF0C;&#x4E0D;&#x5F97;&#x4E0D;&#x8BF4;&#x592A;&#x7279;&#x4E48;&#x667A;&#x80FD;&#x4E86;&#xFF0C;&#x7A0B;&#x5E8F;&#x5458;&#x6700;&#x6015;&#x7684;&#x5C31;&#x662F;&#x4E0D;&#x77E5;&#x9053;&#x81EA;&#x5DF1;&#x9519;&#x5728;&#x54EA;&#x513F;&#xFF01;&#x4E0B;&#x9762;&#x7B80;&#x5355;&#x4ECB;&#x7ECD;&#x4E0B;&#x5B83;&#x7684;&#x4F7F;&#x7528;&#x6D41;&#x7A0B;&#x3002;</p>
+<h3 id="&#x542F;&#x52A8;&#xFF1A;"><a href="#&#x542F;&#x52A8;&#xFF1A;" class="headerlink" title="&#x542F;&#x52A8;&#xFF1A;"></a>&#x542F;&#x52A8;&#xFF1A;</h3><p>&#x901A;&#x8FC7;Xcode&#x5DE5;&#x5177;&#x680F;&#x4E2D; <strong>Product-&gt;Profile</strong> &#x53EF;&#x4EE5;&#x542F;&#x52A8;,&#x6216;&#x8005;&#x4F7F;&#x7528;&#x5FEB;&#x6377;&#x952E; <code>command+i</code> &#x3002;&#x542F;&#x52A8;&#x6709;&#x70B9;&#x6162;&#xFF0C;&#x8010;&#x5FC3;&#x7B49;&#x7B49;&#x5C31;&#x4F1A;&#x51FA;&#x6765;&#xFF0C;&#x50CF;&#x4E0B;&#x9762;&#x8FD9;&#x4E2A;&#x6837;&#x5B50;&#xFF08;UI&#x6BD4;&#x4E4B;&#x524D;&#x7684;&#x8001;&#x7248;&#x672C;&#x597D;&#x770B;&#x4E86;&#x4E0D;&#x5C11;&#xFF09;:<br><img src="http://7xo0ae.com1.z0.glb.clouddn.com/1.png" alt="Instruments&#x9762;&#x677F;"></p>
 
       
     </div>
