@@ -1,0 +1,687 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Gao yuan的博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="&amp;gt;
+
+&amp;#x5B98;&amp;#x7F51;&amp;#x5BF9;gitlab-ce(&amp;#x793E;&amp;#x533A;&amp;#x7248;)&amp;#x6709;&amp;#x8BE6;&amp;#x7EC6;&amp;#x7684;&amp;#x4ECB;&amp;#x7ECD;&amp;#x548C;&amp;#x5404;&amp;#x79CD;&amp;#x5B89;&amp;#x88C5;&amp;#x65B9;&amp;#x6CD5;&amp;#xFF0C;&amp;#x8FD9;&amp;#x91CC;&amp;#x53EA">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac 上快速部署gitlab-ce">
+<meta property="og:url" content="http://yoursite.com/2017/08/01/gitlab-ce/index.html">
+<meta property="og:site_name" content="Gao yuan的博客">
+<meta property="og:description" content="&amp;gt;
+
+&amp;#x5B98;&amp;#x7F51;&amp;#x5BF9;gitlab-ce(&amp;#x793E;&amp;#x533A;&amp;#x7248;)&amp;#x6709;&amp;#x8BE6;&amp;#x7EC6;&amp;#x7684;&amp;#x4ECB;&amp;#x7ECD;&amp;#x548C;&amp;#x5404;&amp;#x79CD;&amp;#x5B89;&amp;#x88C5;&amp;#x65B9;&amp;#x6CD5;&amp;#xFF0C;&amp;#x8FD9;&amp;#x91CC;&amp;#x53EA">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/959455-3c2f5cf23277ecd7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/959455-b95a9bed694e5a1c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/959455-9d64a44e4c3b344e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/959455-2002acb872bdfa1c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/959455-a4ac313b0359ba75.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/959455-06ab6e96012fa40e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/959455-b197e1600ea151a5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/959455-5eb97e9b8bed1c9d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/959455-c569dae9fbde0fe2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/959455-b074e42953fe1115.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/959455-3d5431036783ab51.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/959455-9a9cd43f70a1beae.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/959455-a2e4be18d7b45f95.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/959455-2fa4af35f52d33c5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-10-10T11:27:04.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mac 上快速部署gitlab-ce">
+<meta name="twitter:description" content="&amp;gt;
+
+&amp;#x5B98;&amp;#x7F51;&amp;#x5BF9;gitlab-ce(&amp;#x793E;&amp;#x533A;&amp;#x7248;)&amp;#x6709;&amp;#x8BE6;&amp;#x7EC6;&amp;#x7684;&amp;#x4ECB;&amp;#x7ECD;&amp;#x548C;&amp;#x5404;&amp;#x79CD;&amp;#x5B89;&amp;#x88C5;&amp;#x65B9;&amp;#x6CD5;&amp;#xFF0C;&amp;#x8FD9;&amp;#x91CC;&amp;#x53EA">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/959455-3c2f5cf23277ecd7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> Mac 上快速部署gitlab-ce | Gao yuan的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?be88aa346cd0b61ad636b48fbc5a4b19";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Gao yuan的博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Gao yuan的博客</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Mac 上快速部署gitlab-ce
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-08-01T19:25:27+08:00" content="2017-08-01">
+              2017-08-01
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/08/01/gitlab-ce/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/08/01/gitlab-ce/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>&gt;</p>
+<blockquote>
+<p>&#x5B98;&#x7F51;&#x5BF9;<a href="https://www.gitlab.com.cn/installation/" target="_blank" rel="external">gitlab-ce</a>(&#x793E;&#x533A;&#x7248;)&#x6709;&#x8BE6;&#x7EC6;&#x7684;&#x4ECB;&#x7ECD;&#x548C;&#x5404;&#x79CD;&#x5B89;&#x88C5;&#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x91CC;&#x53EA;&#x8BB2;&#x5230;&#x5982;&#x4F55;&#x5229;&#x7528; <a href="https://www.docker.com/products/docker-toolbox" target="_blank" rel="external">Docker</a> &#x6765;&#x5FEB;&#x901F;&#x5B89;&#x88C5; <a href="https://www.gitlab.com.cn/installation/" target="_blank" rel="external">gitlab-ce</a>&#x5E76;&#x90E8;&#x7F72;&#x5728;&#x5C40;&#x57DF;&#x7F51;</p>
+</blockquote>
+<p>#1.&#x5B89;&#x88C5; <a href="https://www.docker.com/products/docker-toolbox" target="_blank" rel="external">Docker</a><br><img src="http://upload-images.jianshu.io/upload_images/959455-3c2f5cf23277ecd7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>&#x5B89;&#x88C5;&#x5B8C; docker &#x540E;&#x4F1A;&#x53D1;&#x73B0;&#x6709;&#x547D;&#x4EE4;&#x884C;&#x6A21;&#x5F0F;&#xFF08;Terminal&#xFF09;&#x548C; GUI&#x6A21;&#x5F0F;&#xFF08;Kitematic&#xFF09;&#xFF0C;&#x60F3;&#x6311;&#x6218;&#x547D;&#x4EE4;&#x884C;&#x6A21;&#x5F0F;&#x7684;&#x540C;&#x5B66;&#x53EF;&#x4EE5;<a href="http://www.cnblogs.com/int32bit/p/5310382.html" target="_blank" rel="external">&#x53C2;&#x8003;&#x6B64;&#x6559;&#x7A0B;</a></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/959455-b95a9bed694e5a1c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><a id="more"></a> </p>
+<p>#2.&#x521B;&#x5EFA;gitlab-ce<br>&#x6253;&#x5F00; <strong>Kitematic</strong>&#xFF0C;&#x6CE8;&#x518C;&#x767B;&#x5F55;&#x641C;&#x7D22; <strong>gitlab</strong>&#xFF0C;<strong>gitlab-ce</strong>&#x51FA;&#x73B0;&#x5728;&#x7B2C;&#x4E00;&#x4E2A;&#xFF0C;&#x70B9;&#x51FB; <strong>CREATE</strong>&#x3002;&#x7EC6;&#x5FC3;&#x7684;&#x540C;&#x5B66;&#x4F1A;&#x53D1;&#x73B0;&#x5176;&#x5B9E;&#x5728;&#x641C;&#x7D22;&#x7ED3;&#x679C;&#x91CC;&#x9762;&#x6709;&#x4E00;&#x4E2A; <strong>gitlab-ce-zh</strong>&#xFF08;&#x6C49;&#x5316;&#x7684; Gitlab&#x793E;&#x533A;&#x7248; Docker Image&#xFF09;,&#x8FD9;&#x91CC;&#x770B;&#x4E2A;&#x4EBA;&#x9009;&#x62E9;&#x4E86;&#xFF0C;&#x6211;&#x88C5;&#x7684;&#x662F;&#x5B98;&#x65B9;&#x51FA;&#x7684;&#x82F1;&#x6587;&#x7248;</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/959455-9d64a44e4c3b344e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><strong>CREATE</strong>&#x4E4B;&#x540E;&#x5F00;&#x59CB;&#x4E0B;&#x8F7D;&#x8D44;&#x6E90;&#xFF0C;&#x65F6;&#x95F4;&#x53EF;&#x80FD;&#x6709;&#x70B9;&#x957F;</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/959455-2002acb872bdfa1c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>&#x4E0B;&#x8F7D;&#x5B8C;&#x4E86;&#x4E4B;&#x540E;&#x5927;&#x6982;&#x5C31;&#x662F;&#x8FD9;&#x4E2A;&#x6837;&#x5B50;&#xFF1A;</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/959455-a4ac313b0359ba75.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>&#x7B2C;&#x4E00;&#x6B21;&#x6253;&#x5F00;&#x4F1A; &#x540E;&#x8BA9;&#x4F60;&#x91CD;&#x7F6E;&#x5BC6;&#x7801;&#xFF0C;&#x7136;&#x540E;&#x767B;&#x5F55;&#xFF0C;&#x7528;&#x6237;&#x540D;&#x662F; root&#x3002;<br>&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x53EA;&#x80FD;&#x672C;&#x673A;&#x8BBF;&#x95EE; gitlab&#xFF0C;&#x5C40;&#x57DF;&#x7F51;&#x5185;&#x7684;&#x673A;&#x5668;&#x8BBF;&#x95EE;&#x7684;&#x8BDD;&#x9700;&#x8981;&#x7AEF;&#x53E3;&#x6620;&#x5C04;&#x3002;<a href="http://192.168.99.100:32769/" target="_blank" rel="external">http://192.168.99.100:32769</a>&#x8FD9;&#x4E2A;&#x5730;&#x5740;&#x662F; docker &#x865A;&#x62DF;&#x7684;</p>
+<p>#3.&#x5B89;&#x88C5;<a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="external">VirtualBox</a><br><img src="http://upload-images.jianshu.io/upload_images/959455-06ab6e96012fa40e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>&#x6253;&#x5F00;<strong>VirtualBox</strong>&#x540E;&#x4F60;&#x4F1A;&#x53D1;&#x73B0;&#x6709;&#x4E00;&#x4E2A; <strong>default</strong> &#xFF0C;&#x5176;&#x5B9E;&#x5C31;&#x662F; <strong>docker</strong> &#x751F;&#x6210;&#x7684;</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/959455-b197e1600ea151a5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>&#x8BBE;&#x7F6E;&#x2013;&gt;&#x7F51;&#x7EDC;&#x2013;&gt;&#x5C55;&#x5F00;&#x9AD8;&#x7EA7;&#x2013;&gt;&#x7AEF;&#x53E3;&#x8F6C;&#x53D1;&#x2013;&gt; <strong>+</strong> &#x65B0;&#x589E;&#xFF0C;&#x589E;&#x52A0;&#x4E00;&#x6761;</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/959455-5eb97e9b8bed1c9d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>&#x8BBE;&#x7F6E; IP &#x548C;&#x7AEF;&#x53E3;&#x53F7;&#xFF1A;&#x4E3B;&#x673A; IP &#x662F;&#x8BBE;&#x7684;&#x5F53;&#x524D;&#x7535;&#x8111;&#x7684;&#x5185;&#x7F51; IP&#xFF0C;&#x4E3B;&#x673A;&#x7AEF;&#x53E3;&#x81EA;&#x5B9A;&#x4E49;&#xFF0C;&#x53EA;&#x8981;&#x522B;&#x51FA;&#x73B0;&#x548C;&#x5176;&#x4ED6;&#x7684;&#x5E94;&#x7528;&#x7AEF;&#x53E3;&#x53F7;&#x51B2;&#x7A81;&#x5C31;&#x884C;&#xFF0C;&#x5B50;&#x7CFB;&#x7EDF;&#x7AEF;&#x53E3;&#x5C31;&#x662F; <strong>docker</strong> &#x865A;&#x62DF;&#x7684;&#x90A3;&#x4E2A;&#x7AEF;&#x53E3;&#x53F7;</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/959455-c569dae9fbde0fe2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>&#x8FD9;&#x91CC;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x4E00;&#x70B9;&#xFF1A;<strong>32769</strong> &#x7AEF;&#x53E3;&#x53F7;&#x8981;&#x53CC;&#x51FB;&#x518D;&#x4FDD;&#x5B58;&#x4E0B;&#xFF0C;&#x8981;&#x4E0D;&#x7136;&#x4E0B;&#x6B21;&#x91CD;&#x65B0; <strong>START</strong> &#x5C31;&#x53D8;&#x4E86;</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/959455-b074e42953fe1115.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>&#x73B0;&#x5728;&#x53EF;&#x4EE5;&#x5728;&#x5185;&#x7F51;&#x4EFB;&#x4F55;&#x4E00;&#x53F0;&#x673A;&#x5668;&#x7528;&#x65B0;&#x7684;&#x5730;&#x5740;<a href="http://192.168.0.130:8087/users/sign_in" target="_blank" rel="external">http://192.168.0.130:8087/users/sign_in</a> &#x6765;&#x767B;&#x5F55; <strong>gitlab</strong> &#x4E86;</p>
+<p>#4.&#x914D;&#x7F6E;gitlab.rb<br>&#x5982;&#x679C;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x6709;&#x5DF2;&#x7ECF;&#x65B0;&#x5EFA;&#x4E86;&#x9879;&#x76EE;&#x7684;&#x540C;&#x5B66;&#xFF0C;&#x4F1A;&#x53D1;&#x73B0;&#x4F60;&#x9879;&#x76EE;&#x7684;&#x5730;&#x5740;&#x662F;&#x4E71;&#x7801;&#x7684;&#xFF0C;&#x5E76;&#x4E0D;&#x662F;&#x4E0B;&#x9762;&#x8FD9;&#x4E2A;&#x6837;&#x5B50;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD8;&#x6CA1;&#x6709;&#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF08;&#x8FD9;&#x91CC;&#x7684;&#x4E2D;&#x6587;&#x663E;&#x793A;&#x662F;&#x5728;Settings&#x91CC;&#x9762;&#x6539;&#x7684;&#xFF09;&#x3002;</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/959455-3d5431036783ab51.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>&#x5148;&#x7B80;&#x5355;&#x4ECB;&#x7ECD;&#x4E0B;vi/vim &#x7684;&#x4F7F;&#x7528;&#xFF0C;&#x540E;&#x9762;&#x4F1A;&#x7528;&#x5230;&#x3002;&#x8BE6;&#x7EC6;&#x7684;&#x547D;&#x4EE4;&#x5927;&#x5168;&#x8BF7;&#x770B;<a href="http://www.runoob.com/linux/linux-vim.html" target="_blank" rel="external">&#x8FD9;&#x91CC;</a>,&#x4E0B;&#x9762;&#x5217;&#x4E3E;&#x51E0;&#x6761;&#x5E38;&#x7528;&#x547D;&#x4EE4;</p>
+<blockquote>
+<h2 id="&#x8F93;&#x5165;&#x6A21;&#x5F0F;"><a href="#&#x8F93;&#x5165;&#x6A21;&#x5F0F;" class="headerlink" title="&#x8F93;&#x5165;&#x6A21;&#x5F0F;:"></a>&#x8F93;&#x5165;&#x6A21;&#x5F0F;:</h2><p>&#x5728;&#x547D;&#x4EE4;&#x6A21;&#x5F0F;&#x4E0B;&#x6309;&#x4E0B;i&#x3001;I&#x3001;a&#x3001;A&#x3001;o&#x3001;O&#x3001;r&#x548C;R&#x4E2D;&#x7684;&#x67D0;&#x4E00;&#x4E2A;&#x952E;&#x5C31;&#x8FDB;&#x5165;&#x4E86;&#x8F93;&#x5165;&#x6A21;&#x5F0F;&#x3002;<br>&#x5728;&#x8F93;&#x5165;&#x6A21;&#x5F0F;&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x6309;&#x952E;&#xFF1A;<br>&#x5B57;&#x7B26;&#x6309;&#x952E;&#x4EE5;&#x53CA;Shift&#x7EC4;&#x5408;&#xFF0C;&#x8F93;&#x5165;&#x5B57;&#x7B26;<br>ENTER&#xFF0C;&#x56DE;&#x8F66;&#x952E;&#xFF0C;&#x6362;&#x884C;<br>BACK SPACE&#xFF0C;&#x9000;&#x683C;&#x952E;&#xFF0C;&#x5220;&#x9664;&#x5149;&#x6807;&#x524D;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;<br>DEL&#xFF0C;&#x5220;&#x9664;&#x952E;&#xFF0C;&#x5220;&#x9664;&#x5149;&#x6807;&#x540E;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;<br>&#x65B9;&#x5411;&#x952E;&#xFF0C;&#x5728;&#x6587;&#x672C;&#x4E2D;&#x79FB;&#x52A8;&#x5149;&#x6807;<br>HOME/END&#xFF0C;&#x79FB;&#x52A8;&#x5149;&#x6807;&#x5230;&#x884C;&#x9996;/&#x884C;&#x5C3E;<br>Page Up/Page Down&#xFF0C;&#x4E0A;/&#x4E0B;&#x7FFB;&#x9875;<br>Insert&#xFF0C;&#x5207;&#x6362;&#x5149;&#x6807;&#x4E3A;&#x8F93;&#x5165;/&#x66FF;&#x6362;&#x6A21;&#x5F0F;&#xFF0C;&#x5149;&#x6807;&#x5C06;&#x53D8;&#x6210;&#x7AD6;&#x7EBF;/&#x4E0B;&#x5212;&#x7EBF;<br>ESC&#xFF0C;&#x9000;&#x51FA;&#x8F93;&#x5165;&#x6A21;&#x5F0F;&#xFF0C;&#x5207;&#x6362;&#x5230;&#x547D;&#x4EE4;&#x6A21;&#x5F0F;</p>
+<h2 id="vim&#x7684;&#x4FDD;&#x5B58;&#x6587;&#x4EF6;&#x548C;&#x9000;&#x51FA;&#x547D;&#x4EE4;"><a href="#vim&#x7684;&#x4FDD;&#x5B58;&#x6587;&#x4EF6;&#x548C;&#x9000;&#x51FA;&#x547D;&#x4EE4;" class="headerlink" title="vim&#x7684;&#x4FDD;&#x5B58;&#x6587;&#x4EF6;&#x548C;&#x9000;&#x51FA;&#x547D;&#x4EE4;:"></a>vim&#x7684;&#x4FDD;&#x5B58;&#x6587;&#x4EF6;&#x548C;&#x9000;&#x51FA;&#x547D;&#x4EE4;:</h2><p>:w &#x2014;&#x2014; &#x4FDD;&#x5B58;&#x7F16;&#x8F91;&#x540E;&#x7684;&#x6587;&#x4EF6;&#x5185;&#x5BB9;&#xFF0C;&#x4F46;&#x4E0D;&#x9000;&#x51FA;vim&#x7F16;&#x8F91;&#x5668;&#x3002;&#x8FD9;&#x4E2A;&#x547D;&#x4EE4;&#x7684;&#x4F5C;&#x7528;&#x662F;&#x628A;&#x5185;&#x5B58;&#x7F13;&#x51B2;&#x533A;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x5199;&#x5230;&#x542F;&#x52A8;vim&#x65F6;&#x6307;&#x5B9A;&#x7684;&#x6587;&#x4EF6;&#x4E2D;&#x3002;<br>:w! &#x2014;&#x2014; &#x5F3A;&#x5236;&#x5199;&#x6587;&#x4EF6;&#xFF0C;&#x5373;&#x5F3A;&#x5236;&#x8986;&#x76D6;&#x539F;&#x6709;&#x6587;&#x4EF6;&#x3002;&#x5982;&#x679C;&#x539F;&#x6709;&#x6587;&#x4EF6;&#x7684;&#x8BBF;&#x95EE;&#x6743;&#x9650;&#x4E0D;&#x5141;&#x8BB8;&#x5199;&#x5165;&#x6587;&#x4EF6;&#xFF0C;&#x4F8B;&#x5982;&#xFF0C;&#x539F;&#x6709;&#x7684;&#x6587;&#x4EF6;&#x4E3A;&#x53EA;&#x8BFB;&#x6587;&#x4EF6;&#xFF0C;&#x5219;&#x53EF;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x547D;&#x4EE4;&#x5F3A;&#x5236;&#x5199;&#x5165;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x8FD9;&#x79CD;&#x547D;&#x4EE4;&#x7528;&#x6CD5;&#x4EC5;&#x5F53;&#x7528;&#x6237;&#x662F;&#x6587;&#x4EF6;&#x7684;&#x5C5E;&#x4E3B;&#x65F6;&#x624D;&#x9002;&#x7528;&#xFF0C;&#x800C;&#x8D85;&#x7EA7;&#x7528;&#x6237;&#x5219;&#x4E0D;&#x53D7;&#x6B64;&#x9650;&#x5236;&#x3002;<br>:wq &#x2014;&#x2014; &#x4FDD;&#x5B58;&#x6587;&#x4EF6;&#x5185;&#x5BB9;&#x540E;&#x9000;&#x51FA;vim&#x7F16;&#x8F91;&#x5668;&#x3002;&#x8FD9;&#x4E2A;&#x547D;&#x4EE4;&#x7684;&#x4F5C;&#x7528;&#x662F;&#x628A;&#x5185;&#x5B58;&#x7F13;&#x51B2;&#x533A;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x5199;&#x5230;&#x542F;&#x52A8;vim&#x65F6;&#x6307;&#x5B9A;&#x7684;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x7136;&#x540E;&#x9000;&#x51FA;vim&#x7F16;&#x8F91;&#x5668;&#x3002;&#x53E6;&#x5916;&#x4E00;&#x79CD;&#x66FF;&#x4EE3;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x7528;ZZ&#x547D;&#x4EE4;&#x3002;<br>:wq! &#x2014;&#x2014; &#x5F3A;&#x5236;&#x4FDD;&#x5B58;&#x6587;&#x4EF6;&#x5185;&#x5BB9;&#x540E;&#x9000;&#x51FA;vim&#x7F16;&#x8F91;&#x5668;&#x3002;&#x8FD9;&#x4E2A;&#x547D;&#x4EE4;&#x7684;&#x4F5C;&#x7528;&#x662F;&#x628A;&#x5185;&#x5B58;&#x7F13;&#x51B2;&#x533A;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x5F3A;&#x5236;&#x5199;&#x5230;&#x542F;&#x52A8;vim&#x65F6;&#x6307;&#x5B9A;&#x7684;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x7136;&#x540E;&#x9000;&#x51FA;vim&#x7F16;&#x8F91;&#x5668;&#x3002;<br>ZZ &#x2014;&#x2014; &#x4F7F;&#x7528;ZZ&#x547D;&#x4EE4;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x6587;&#x4EF6;&#x5DF2;&#x7ECF;&#x505A;&#x8FC7;&#x7F16;&#x8F91;&#x5904;&#x7406;&#xFF0C;&#x5219;&#x628A;&#x5185;&#x5B58;&#x7F13;&#x51B2;&#x533A;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x5199;&#x5230;&#x542F;&#x52A8;vim&#x65F6;&#x6307;&#x5B9A;&#x7684;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x7136;&#x540E;&#x9000;&#x51FA;vim&#x7F16;&#x8F91;&#x5668;&#x3002;&#x5426;&#x5219;&#x53EA;&#x662F;&#x9000;&#x51FA;vim&#x800C;&#x5DF2;&#x3002;&#x6CE8;&#x610F;&#xFF0C;ZZ&#x547D;&#x4EE4;&#x524D;&#x9762;&#x65E0;&#x9700;&#x52A0;&#x5192;&#x53F7;&#x201C;&#xFF1A;&#x201D;&#xFF0C;&#x4E5F;&#x65E0;&#x9700;&#x6309;Enter&#x952E;&#x3002;<br>:q &#x2014;&#x2014; &#x5728;&#x672A;&#x505A;&#x4EFB;&#x4F55;&#x7F16;&#x8F91;&#x5904;&#x7406;&#x800C;&#x51C6;&#x5907;&#x9000;&#x51FA;vim&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6B64;&#x547D;&#x4EE4;&#x3002;&#x5982;&#x679C;&#x5DF2;&#x505A;&#x8FC7;&#x7F16;&#x8F91;&#x5904;&#x7406;&#xFF0C;&#x5219;vim&#x4E0D;&#x5141;&#x8BB8;&#x7528;&#x6237;&#x4F7F;&#x7528;&#x201C;:q&#x201D;&#x547D;&#x4EE4;&#x9000;&#x51FA;&#xFF0C;&#x540C;&#x65F6;&#x8FD8;&#x4F1A;&#x8F93;&#x51FA;&#x4E0B;&#x5217;&#x8B66;&#x544A;&#x4FE1;&#x606F;&#xFF1A;No write since last change (:quit! overrides)<br>:q! &#x2014;&#x2014; &#x5F3A;&#x5236;&#x9000;&#x51FA;vim&#x7F16;&#x8F91;&#x5668;&#xFF0C;&#x653E;&#x5F03;&#x7F16;&#x8F91;&#x5904;&#x7406;&#x7684;&#x7ED3;&#x679C;&#x3002;&#x5982;&#x679C;&#x786E;&#x5B9E;&#x4E0D;&#x9700;&#x8981;&#x4FDD;&#x5B58;&#x4FEE;&#x6539;&#x540E;&#x7684;&#x6587;&#x4EF6;&#x5185;&#x5BB9;&#xFF0C;&#x53EF;&#x8F93;&#x5165;&#x201C;:q!&#x201D;&#x547D;&#x4EE4;&#xFF0C;&#x5F3A;&#x884C;&#x9000;&#x51FA;vim&#x7F16;&#x8F91;&#x5668;&#x3002;</p>
+</blockquote>
+<p>&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x5728;&#x54EA;&#x91CC;&#x5462;&#xFF0C;&#x5176;&#x5B9E;&#x5F88;&#x597D;&#x627E;&#xFF1A;</p>
+<ul>
+<li>&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#x662F;&#x70B9;&#x51FB;&#x5DE6;&#x4E0A;&#x89D2;&#x7684; <strong>EXEC</strong> &#x4F1A;&#x6253;&#x5F00;&#x7EC8;&#x7AEF;&#xFF0C;<code>ls</code>&#x5230;<code>/etc/gitlab</code>&#x76EE;&#x5F55;&#x4E0B;&#x6267;&#x884C;<code>vim gitlab.rb</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//&#x627E;&#x5230; external_url &#x53BB;&#x6389;&#x524D;&#x9762;&#x7684; # ,&#x6539;&#x4E3A;&#x5F53;&#x524D;&#x673A;&#x5668;&#x7684;&#x5185;&#x7F51; IP&#xFF0C;</span><br><span class="line"></span><br><span class="line">external_url &apos;http://192.168.0.130&apos;</span><br><span class="line"></span><br><span class="line">//&#x8FD9;&#x4E2A;&#x5730;&#x5740;&#x540E;&#x9762;&#x5E94;&#x8BE5;&#x662F;&#x6709;&#x524D;&#x9762;&#x7528;VirtualBox&#x8BBE;&#x7F6E;&#x7684;&#x7AEF;&#x53E3;&#x53F7;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x56E0;&#x4E3A;&#x52A0;&#x4E86;&#x7AEF;&#x53E3;&#x53F7;&#x540E; docker &#x5F00;&#x542F; gitlab-ce &#x4F1A;&#x62A5;&#x9519;&#xFF0C;&#x6240;&#x4EE5;&#x53BB;&#x6389;&#x4E86;</span><br></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/959455-9a9cd43f70a1beae.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<ul>
+<li>&#x7B2C;&#x4E8C;&#x79CD;&#x662F;&#x70B9;&#x51FB; <strong>/etc/gitlab</strong> &#x51FA;&#x73B0;&#x5F39;&#x7A97;&#x70B9; <strong>Enable Volumes</strong> &#xFF0C;&#x6253;&#x5F00; <strong>gitlab.rb</strong>&#xFF0C;&#x6700;&#x597D;&#x7528;&#x5F00;&#x53D1;&#x5DE5;&#x5177;&#x6253;&#x5F00;&#xFF0C;&#x4E0D;&#x8981;&#x7528;&#x6587;&#x672C;&#x7F16;&#x8F91;&#x3002;&#x4F46;&#x662F;&#x975E;&#x5E38;&#x4E0D;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;&#x4F1A;&#x51FA;&#x73B0;&#x610F;&#x60F3;&#x4E0D;&#x5230;&#x7684;&#x95EE;&#x9898;&#x3002;<br>&#x4FEE;&#x6539;&#x7684;&#x65F6;&#x5019;&#x627E;&#x5230;&#x4F60;&#x7684;&#x4FEE;&#x6539;&#x9879;&#x53BB;&#x6389;&#x524D;&#x9762;&#x7684; <strong>#</strong> &#x518D;&#x4FEE;&#x6539;&#x4FDD;&#x5B58;</li>
+</ul>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#x627E;&#x5230; external_url &#x6539;&#x4E3A;&#x5F53;&#x524D;&#x673A;&#x5668;&#x7684;&#x5185;&#x7F51; <span class="symbol">IP:</span></span><br><span class="line"></span><br><span class="line">external_url <span class="string">&apos;http://192.168.0.130&apos;</span></span><br><span class="line"></span><br><span class="line">&#x8FD9;&#x4E2A;&#x5730;&#x5740;&#x540E;&#x9762;&#x5E94;&#x8BE5;&#x662F;&#x6709;&#x524D;&#x9762;&#x7528;VirtualBox&#x8BBE;&#x7F6E;&#x7684;&#x7AEF;&#x53E3;&#x53F7;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x56E0;&#x4E3A;&#x52A0;&#x4E86;&#x7AEF;&#x53E3;&#x53F7;&#x540E; docker &#x5F00;&#x542F; gitlab-ce &#x4F1A;&#x62A5;&#x9519;&#xFF0C;&#x6240;&#x4EE5;&#x53BB;&#x6389;&#x4E86;</span><br></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/959455-a2e4be18d7b45f95.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>&#x521B;&#x5EFA;&#x9879;&#x76EE;&#x6210;&#x529F;&#x4E4B;&#x540E;clone&#x7684;&#x65F6;&#x5019;&#x9700;&#x8981;&#x5728;http&#x94FE;&#x63A5;&#x4E2D;&#x7684;IP&#x5730;&#x5740;&#x540E;&#x9762;&#x52A0;&#x4E0A;&#x7528;VirtualBox&#x8BBE;&#x7F6E;&#x7684;&#x7AEF;&#x53E3;&#x53F7;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">http://192.168.0.130/root/introduce.git</span><br><span class="line">&#x4F7F;&#x7528;&#x7684;&#x65F6;&#x5019;&#x5E94;&#x6539;&#x4E3A;:</span><br><span class="line">http://192.168.0.130:8087/root/introduce.git</span><br></pre></td></tr></table></figure></p>
+<p>#5.&#x6700;&#x540E;<br>&#x653E;&#x4E00;&#x4E2A; <strong>Admin Area</strong> &#x754C;&#x9762;</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/959455-2fa4af35f52d33c5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<blockquote>
+<ul>
+<li>&#x5173;&#x4E8E;&#x5F00;&#x542F;&#x90AE;&#x4EF6;&#x670D;&#x52A1;&#xFF0C;&#x8BD5;&#x4E86;&#x51E0;&#x6B21;&#x4E0D;&#x600E;&#x4E48;&#x597D;&#x4F7F;&#xFF0C;&#x5C31;&#x6CA1;&#x7528;&#x5B83;&#x3002;&#x7BA1;&#x7406;&#x5458;&#x53EF;&#x4EE5;&#x5F00;&#x542F;<strong>sign up</strong>&#x529F;&#x80FD;&#x8BA9;&#x7528;&#x6237;&#x81EA;&#x5DF1;&#x6CE8;&#x518C;&#xFF1B;&#x4E5F;&#x53EF;&#x4EE5;&#x81EA;&#x5DF1;<strong>New user</strong>&#x7136;&#x540E;&#x518D;<strong>Edit</strong>&#x4FEE;&#x6539;&#x5BC6;&#x7801;</li>
+<li>&#x5173;&#x4E8E; SSH &#x534F;&#x8BAE;&#xFF0C;&#x770B;&#x4E86;&#x7F51;&#x4E0A;&#x7684;&#x6559;&#x7A0B;&#x6539;&#x4E86;&#x51E0;&#x6B21; <strong>gitlab.rb</strong>&#x6CA1;&#x6210;&#x529F;&#x1F614;&#xFF0C;&#x51C6;&#x5907;&#x518D;&#x8BD5;&#x8BD5;</li>
+</ul>
+</blockquote>
+<p>&#x53C2;&#x8003;&#x6587;&#x7AE0;&#xFF1A;<a href="http://www.jianshu.com/p/b983db7e7c90" target="_blank" rel="external">Mac&#x901A;&#x8FC7;Docker&#x90E8;&#x7F72;Gitlab&#x5B9E;&#x8DF5;</a></p>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/18/Instruments的使用/" rel="next" title="Instruments的使用">
+                <i class="fa fa-chevron-left"></i> Instruments的使用
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/09/zhihuDaily/" rel="prev" title="Weex 练手项目：仿知乎日报（Android+iOS）">
+                Weex 练手项目：仿知乎日报（Android+iOS） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/08/01/gitlab-ce/"
+           data-title="Mac 上快速部署gitlab-ce" data-url="http://yoursite.com/2017/08/01/gitlab-ce/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="me/me.png"
+               alt="Gao yuan" />
+          <p class="site-author-name" itemprop="name">Gao yuan</p>
+          <p class="site-description motion-element" itemprop="description">记录工作生活</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/yuan-gao" target="_blank" title="github">
+                  
+                    <i class="fa fa-globe"></i>
+                  
+                  github
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#输入模式"><span class="nav-number">1.</span> <span class="nav-text">输入模式:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vim的保存文件和退出命令"><span class="nav-number">2.</span> <span class="nav-text">vim的保存文件和退出命令:</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Gao yuan</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"yuan-gao"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
